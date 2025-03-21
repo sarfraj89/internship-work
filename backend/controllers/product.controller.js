@@ -42,6 +42,10 @@ export const createProduct = async (req, res) => {
   try {
     const { name, description, price, image, category } = req.body;
 
+    if (!name || !description || !price || !image || !category) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
+
     let cloudinaryResponse = null;
 
     if (image) {

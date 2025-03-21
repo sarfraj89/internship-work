@@ -35,13 +35,14 @@ export const protectRoute = async (req, res, next) => {
   }
 };
 
-export const sellerRoute = (req, res, next) => {
+ /* export const sellerRoute = (req, res, next) => {
   if (req.user && req.user.role === "seller") {
     next();
   } else {
     return res.status(403).json({ message: "Access denied - Seller only" });
   }
 };
+*/
 
 export const adminRoute = (req, res, next) => {
   if (req.user && req.user.role === "admin") {
