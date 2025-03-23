@@ -1,0 +1,13 @@
+for authentication
+
+api/auth/signup
+api/auth/logout
+api/auth/login
+api/auth/refresh-token
+
+for Product 
+
+api/products/  //for get all products (admin route)
+api/products/category
+api/products/recommendations
+api/products/featured
