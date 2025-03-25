@@ -17,7 +17,7 @@ import categoryRoutes from "./routes/categories.route.js";
 import { connectDB } from "./lib/db.js";
 import productVariantRoutes from "./routes/productVariant.route.js";
 import supportTickerRoutes from "./routes/supportTicket.route.js";
-import subsRouutes from "./routes/subscription.route.js";
+import subsRoutes from "./routes/subscription.route.js";
 
 dotenv.config();
 
@@ -42,7 +42,7 @@ app.use("/api/faqs", faqRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/products/:id/variants", productVariantRoutes);
 app.use("/api/tickets", supportTickerRoutes);
-app.use("/api/subscription", subsRouutes);
+app.use("/api/subscription", subsRoutes);
 
 app.listen(PORT, () => {
   console.log("Server is running on http://localhost:" + PORT);
