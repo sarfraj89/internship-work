@@ -1,5 +1,27 @@
+<<<<<<< HEAD
 # Node Modules
 node_modules
 
 # Environment Variable
 .env
+=======
+# Node.js dependencies
+node_modules/
+package-lock.json
+
+# Environment variables
+.env
+
+# Logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+>>>>>>> main2
