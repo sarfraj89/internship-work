@@ -1,5 +1,5 @@
-import express from express;
-import { adminRoute, protectRoute } from "../middleware/auth.middleware";
+import express from "express";
+import { adminRoute, protectRoute } from "../middleware/auth.middleware.js";
 import { getProductVariants, addProductVariant,updateProductVariant, deleteProductVariant } from "../controllers/productVariant.controller.js";
 
 const router = express.Router();

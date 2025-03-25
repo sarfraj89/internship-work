@@ -1,10 +1,9 @@
 import StaticPage from "../models/pages.model.js";
 
-
 // Get Static Page by Slug
-export const getAllPages = async (req, res) => {
+export const getPagesbySlug = async (req, res) => {
   try {
-    const page = await StaticPage.findOne({ slug: req.params.slug });
+    const page = await StaticPage.findOne({ slug: req.params.slug }); // ✅ Find page by slug
     if (!page) {
       return res.status(404).json({ message: "Page not found" });
     }
@@ -13,6 +12,18 @@ export const getAllPages = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+
+
+// get All pages
+export const getAllPages = async (req, res) => {
+  try {
+    const pages = await StaticPage.find(); // ✅ Get all pages
+    res.json(pages);
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
 
 // Create a Static Page (Admin Only)
 export const createPage = async (req, res) => {
@@ -56,16 +67,14 @@ export const updatePage = async (req, res) => {
 // Delete a Static Page (Admin Only)
 export const deletePage = async (req, res) => {
   try {
-    const deletedPage = await StaticPage.findOneAndDelete({
-      slug: req.params.slug,
-    });
+    const deletedPage = await StaticPage.findOneAndDelete({ slug: req.params.slug });
 
     if (!deletedPage) {
-      return res.status(404).json({ message: "Page not found" });
+      return res.status(404).json({ message: `Page with slug "${req.params.slug}" not found` });
     }
 
-    res.json({ message: "Page deleted successfully" });
+    res.json({ message: `Page "${req.params.slug}" deleted successfully` });
   } catch (error) {
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({ message: "Server error", error: error.message });
   }
 };

@@ -15,10 +15,10 @@ const supportTicketSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    staus: {
+    status: {
       type: String,
       enum: ["open", "resolved", "closed"],
-      default: open,
+      default: "open",
     },
   },
   { timestamps: true }

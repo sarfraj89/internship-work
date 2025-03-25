@@ -1,5 +1,4 @@
-import { Category, Subcategory } from "../routes/categories.route.js";
-
+import { Category, Subcategory } from "../models/categories.model.js";
 // Get all categories
 export const getCategories = async (req, res) => {
   try {

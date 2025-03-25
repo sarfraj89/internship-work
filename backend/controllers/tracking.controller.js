@@ -1,4 +1,4 @@
-import Tracking from "../models/tracking.model";
+import Tracking from "../models/tracking.model.js";
 
 export const trackingInfo = async (req, res) => {
   try {

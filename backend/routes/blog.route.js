@@ -1,6 +1,6 @@
 import express from "express";
-import { protectRoute, adminRoute } from "../middleware/auth.middleware";
-import { getAllBlogs, getBlogById, createBlog, updateBlog, deleteBlog } from "../controllers/blog.controller";
+import { protectRoute, adminRoute } from "../middleware/auth.middleware.js";
+import { getAllBlogs, getBlogById, createBlog, updateBlog, deleteBlog } from "../controllers/blog.controller.js";
 
 const router = express.Router();
 

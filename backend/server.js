@@ -15,6 +15,9 @@ import staticPageRoutes from "./routes/pages.route.js";
 import faqRoutes from "./routes/faq.route.js";
 import categoryRoutes from "./routes/categories.route.js";
 import { connectDB } from "./lib/db.js";
+import productVariantRoutes from "./routes/productVariant.route.js";
+import supportTickerRoutes from "./routes/supportTicket.route.js";
+import subsRouutes from "./routes/subscription.route.js";
 
 dotenv.config();
 
@@ -26,8 +29,8 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
-app.use("api/cart", cartRoutes);
-app.use("api/coupons", couponRoutes);
+app.use("/api/cart", cartRoutes);
+app.use("/api/coupons", couponRoutes);
 // app.use("api/payments", paymentRoutes);
 app.use("/api/analytics", analyticsRoutes);
 app.use("/api/addresses", addressRoutes);
@@ -38,6 +41,8 @@ app.use("/api/pages", staticPageRoutes);
 app.use("/api/faqs", faqRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/products/:id/variants", productVariantRoutes);
+app.use("/api/tickets", supportTickerRoutes);
+app.use("/api/subscription", subsRouutes);
 
 app.listen(PORT, () => {
   console.log("Server is running on http://localhost:" + PORT);
